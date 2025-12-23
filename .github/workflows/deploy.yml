@@ -19,8 +19,12 @@ jobs:
             set -e
             echo "Starting deployment..."
             cd /var/www/Portefolio || exit 1
-            echo "Pulling latest changes..."
-            git pull origin main || exit 1
+            echo "Fetching latest changes..."
+            git fetch origin main || exit 1
+            echo "Resetting to remote main..."
+            git reset --hard origin/main || exit 1
+            echo "Cleaning up..."
+            git clean -fd || exit 1
             echo "Reloading Apache..."
             sudo systemctl reload apache2 || exit 1
             echo "Deployment completed successfully!"
