@@ -873,6 +873,63 @@ section {
         width: 95%;
         padding: 2rem;
     }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .portfolio-item {
+        height: auto;
+        min-height: 280px;
+    }
+
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
 }
 
 /* ===== SCROLLBAR ===== */
@@ -891,6 +948,54 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-light);
+}
+
+/* ===== STATS SECTION ===== */
+.stats-section {
+    background: var(--bg-dark);
+    padding: 4rem 0;
+    min-height: auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* ===== ANIMATIONS ===== */

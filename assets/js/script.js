@@ -385,6 +385,45 @@ console.log('%c🎨 Portfolio créé avec ❤️', 'color: #6c0707; font-size: 2
 console.log('%cSi vous êtes ici, c\'est que vous êtes curieux! 👀', 'color: #b3b3b3; font-size: 14px;');
 console.log('%cN\'hésitez pas à me contacter pour discuter de vos projets!', 'color: #b3b3b3; font-size: 14px;');
 
+// ===== ANIMATED COUNTERS =====
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // Vitesse d'animation
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / speed;
+
+        const updateCount = () => {
+            count += increment;
+            if (count < target) {
+                counter.textContent = Math.ceil(count);
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.textContent = target;
+            }
+        };
+
+        updateCount();
+    });
+}
+
+// Observer pour déclencher l'animation quand la section est visible
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.disconnect(); // Animation une seule fois
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
 // ===== CUSTOM CURSOR (Optional) =====
 // Uncomment to enable custom cursor effect
 /*
