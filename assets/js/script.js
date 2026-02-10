@@ -179,124 +179,77 @@ filterBtns.forEach(btn => {
 
 // ===== PROJECT DATA =====
 const projectsData = {
-    1: {
-        title: "Application E-Commerce",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        category: "Développement Web",
-        date: "Décembre 2024",
-        description: "Plateforme de vente en ligne complète avec système de paiement intégré, gestion des stocks en temps réel et tableau de bord administrateur.",
-        technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
+    'cobian': {
+        title: "Cobian Reflector",
+        image: "assets/projects/cobian-reflector/apercu.png",
+        category: "Administration Systèmes",
+        date: "Décembre 2025",
+        description: "Mise en place d'une solution de sauvegarde automatisée et fiable avec Cobian Reflector pour assurer la protection des données critiques de l'entreprise.",
+        technologies: ["Cobian Reflector", "Windows Server", "Tâches planifiées", "Sauvegarde incrémentielle"],
         features: [
-            "Authentification sécurisée avec JWT",
-            "Panier d'achat dynamique avec localStorage",
-            "Paiement en ligne via Stripe",
-            "Dashboard admin pour la gestion des produits",
-            "Système de recherche et filtres avancés",
-            "Responsive design pour mobile et tablette"
+            "Configuration de sauvegardes automatiques programmées",
+            "Sauvegarde incrémentielle pour optimiser l'espace disque",
+            "Rotation des sauvegardes avec rétention personnalisée",
+            "Notifications par email en cas d'échec",
+            "Vérification de l'intégrité des sauvegardes",
+            "Documentation complète de la procédure"
         ],
-        challenges: "Implémentation d'un système de paiement sécurisé et gestion des transactions en temps réel.",
-        github: "https://github.com/username/ecommerce-app",
-        demo: "https://ecommerce-demo.com",
-        docs: "assets/docs/ecommerce-docs.pdf"
+        challenges: "Mettre en place une stratégie de sauvegarde efficace tout en optimisant l'utilisation des ressources de stockage.",
+        docs: "assets/projects/cobian-reflector/documentation.pdf"
     },
-    2: {
-        title: "Design System",
-        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
-        category: "Design UI/UX",
-        date: "Novembre 2024",
-        description: "Bibliothèque de composants UI réutilisables avec documentation complète, créée pour assurer la cohérence visuelle à travers tous les projets.",
-        technologies: ["React", "Storybook", "Styled Components", "TypeScript"],
+    'fog': {
+        title: "FOG Project",
+        image: "assets/projects/fog/apercu.png",
+        category: "Déploiement Réseau",
+        date: "Décembre 2025",
+        description: "Déploiement et configuration d'un serveur FOG pour le clonage et le déploiement d'images système à grande échelle dans un environnement de parc informatique.",
+        technologies: ["FOG Project", "Linux", "PXE Boot", "TFTP", "NFS", "MySQL"],
         features: [
-            "50+ composants réutilisables",
-            "Documentation interactive avec Storybook",
-            "Thème personnalisable (light/dark mode)",
-            "Accessibilité WCAG 2.1 AA",
-            "Tests unitaires avec Jest",
-            "NPM package pour installation facile"
+            "Installation et configuration du serveur FOG",
+            "Création et gestion d'images système Windows/Linux",
+            "Déploiement réseau via PXE Boot",
+            "Gestion centralisée du parc informatique",
+            "Multicast pour déploiements simultanés",
+            "Inventaire automatique des machines"
         ],
-        challenges: "Créer des composants flexibles et accessibles qui fonctionnent dans différents contextes.",
-        figma: "https://figma.com/design-system",
-        demo: "https://design-system-demo.com",
-        docs: "assets/docs/design-system-docs.pdf"
+        challenges: "Optimiser les performances du déploiement réseau pour gérer simultanément plusieurs machines tout en maintenant la stabilité du réseau.",
+        docs: "assets/projects/fog/documentation.pdf"
     },
-    3: {
-        title: "Dashboard Analytics",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
-        category: "Data Visualization",
-        date: "Octobre 2024",
-        description: "Interface de visualisation de données en temps réel pour suivre les KPIs et métriques business avec graphiques interactifs.",
-        technologies: ["Vue.js", "Chart.js", "D3.js", "Node.js", "Socket.io", "PostgreSQL"],
+    'glpi-install': {
+        title: "GLPI - Installation",
+        image: "assets/projects/glpi-installation/apercu.png",
+        category: "Gestion de Parc",
+        date: "Décembre 2025",
+        description: "Installation et configuration complète d'un système de gestion de parc informatique GLPI avec base de données MySQL et serveur web Apache.",
+        technologies: ["GLPI", "Apache", "MySQL", "PHP", "Linux Debian", "FusionInventory"],
         features: [
-            "Visualisation temps réel avec WebSocket",
-            "Graphiques interactifs et personnalisables",
-            "Export de rapports en PDF/Excel",
-            "Filtres et périodes personnalisées",
-            "Alertes automatiques sur seuils",
-            "Multi-utilisateurs avec rôles"
+            "Installation de GLPI sur serveur Linux Debian",
+            "Configuration de la base de données MySQL",
+            "Paramétrage du serveur web Apache avec SSL",
+            "Installation des plugins essentiels (FusionInventory)",
+            "Configuration des droits et rôles utilisateurs",
+            "Sécurisation de l'accès à l'interface web"
         ],
-        challenges: "Optimiser les performances pour afficher des milliers de points de données en temps réel.",
-        youtube: "https://youtube.com/watch?v=demo",
-        demo: "https://dashboard-demo.com",
-        github: "https://github.com/username/dashboard-analytics"
+        challenges: "Assurer une installation sécurisée et optimisée en respectant les bonnes pratiques d'administration système.",
+        docs: "assets/projects/glpi-installation/documentation.pdf"
     },
-    4: {
-        title: "Infrastructure Cloud",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-        category: "DevOps & Cloud",
-        date: "Septembre 2024",
-        description: "Architecture réseau sécurisée déployée sur AWS avec haute disponibilité, scalabilité automatique et monitoring complet.",
-        technologies: ["AWS", "Terraform", "Docker", "Kubernetes", "Jenkins", "Prometheus"],
+    'glpi-usage': {
+        title: "GLPI - Utilisation",
+        image: "assets/projects/glpi-utilisation/apercu.png",
+        category: "Gestion de Parc",
+        date: "Décembre 2025",
+        description: "Gestion quotidienne et utilisation avancée de GLPI pour le suivi du parc informatique, la gestion des tickets et l'inventaire des équipements.",
+        technologies: ["GLPI", "FusionInventory", "Gestion des tickets", "Inventaire automatique"],
         features: [
-            "Infrastructure as Code avec Terraform",
-            "Auto-scaling basé sur la charge",
-            "Load balancing multi-zones",
-            "CI/CD avec Jenkins",
-            "Monitoring avec Prometheus & Grafana",
-            "Backup automatique et disaster recovery"
+            "Création et suivi des tickets d'incidents",
+            "Gestion de l'inventaire matériel et logiciel",
+            "Attribution des équipements aux utilisateurs",
+            "Gestion des licences logicielles",
+            "Suivi des interventions et historiques",
+            "Génération de rapports et statistiques"
         ],
-        challenges: "Mettre en place une architecture hautement disponible tout en optimisant les coûts.",
-        docs: "assets/docs/infrastructure-docs.pdf",
-        diagram: "assets/docs/architecture-diagram.pdf"
-    },
-    5: {
-        title: "API REST Complète",
-        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
-        category: "Backend Development",
-        date: "Août 2024",
-        description: "API RESTful scalable avec authentification JWT, rate limiting, documentation Swagger et tests automatisés.",
-        technologies: ["Node.js", "Express", "MongoDB", "JWT", "Swagger", "Jest"],
-        features: [
-            "Authentification & autorisation JWT",
-            "Rate limiting et protection DDoS",
-            "Documentation Swagger interactive",
-            "Validation des données avec Joi",
-            "Tests unitaires et d'intégration",
-            "Logging et monitoring des erreurs"
-        ],
-        challenges: "Sécuriser l'API contre les attaques courantes (injection SQL, XSS, CSRF).",
-        github: "https://github.com/username/rest-api",
-        docs: "https://api-docs-demo.com",
-        postman: "https://postman.com/collection"
-    },
-    6: {
-        title: "Mobile App Design",
-        image: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=800&q=80",
-        category: "Mobile UI/UX",
-        date: "Juillet 2024",
-        description: "Interface moderne et intuitive pour application mobile de fitness avec tracking d'activités et planification d'entraînements.",
-        technologies: ["Figma", "Adobe XD", "Principle", "InVision"],
-        features: [
-            "Wireframes et prototypes interactifs",
-            "Design system cohérent",
-            "Micro-interactions et animations",
-            "Tests utilisateurs A/B",
-            "Mode sombre et clair",
-            "Accessibilité optimisée"
-        ],
-        challenges: "Créer une expérience utilisateur intuitive pour tous les niveaux de fitness.",
-        figma: "https://figma.com/fitness-app",
-        prototype: "https://invision.com/prototype",
-        demo: "https://fitness-app-demo.com"
+        challenges: "Optimiser l'organisation du parc informatique et améliorer la traçabilité des interventions techniques.",
+        docs: "assets/projects/glpi-utilisation/documentation.pdf"
     }
 };
 
