@@ -581,8 +581,8 @@ section {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
 }
 
 .portfolio-item {
@@ -591,6 +591,9 @@ section {
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .portfolio-item:hover {
@@ -601,8 +604,9 @@ section {
 
 .portfolio-image {
     position: relative;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .portfolio-image img {
@@ -649,8 +653,9 @@ section {
 .portfolio-actions {
     display: flex;
     justify-content: space-around;
-    padding: 1.5rem;
+    padding: 1.8rem;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .action-btn {
