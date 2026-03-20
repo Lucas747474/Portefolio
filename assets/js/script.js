@@ -14,7 +14,7 @@ const phrases = [
     "en 2ème année de BTS SIO option SISR",
     "curieux",
     "un futur étudiant en cyberdéfense",
-    "recherches d'alternance",
+    "en recherches d'alternance",
     "motivé"
 ];
 
@@ -422,6 +422,101 @@ const statsObserver = new IntersectionObserver((entries) => {
 const statsSection = document.querySelector('.stats-section');
 if (statsSection) {
     statsObserver.observe(statsSection);
+}
+
+// ===== DARK MODE TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+    if (themeToggle) themeToggle.classList.add('dark');
+}
+
+// Toggle theme
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        themeToggle.classList.toggle('dark');
+
+        // Save preference
+        const theme = body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', theme);
+    });
+}
+
+// ===== SCROLL TO TOP BUTTON =====
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopBtn?.classList.add('active');
+    } else {
+        scrollToTopBtn?.classList.remove('active');
+    }
+});
+
+scrollToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ===== CONTACT FORM HANDLING =====
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
+
+        try {
+            // Simulate form submission (replace with your actual endpoint)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Success
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+            submitBtn.style.background = '#4ade80';
+
+            // Reset form
+            contactForm.reset();
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
+
+        } catch (error) {
+            // Error
+            submitBtn.innerHTML = '<i class="fas fa-times"></i> Erreur d\'envoi';
+            submitBtn.style.background = '#ef4444';
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        }
+    });
 }
 
 // ===== CUSTOM CURSOR (Optional) =====
